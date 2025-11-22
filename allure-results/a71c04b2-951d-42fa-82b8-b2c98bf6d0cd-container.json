@@ -1,0 +1,1 @@
+{"uuid":"a71c04b2-951d-42fa-82b8-b2c98bf6d0cd","name":"com.project.tests.AddPersonalDetailsTest","children":["1d80b415-7c89-401e-94aa-0ee0c38b0bdd"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1763782006601,"stop":1763782011961}],"afters":[],"start":1763782006535,"stop":1763782019946}

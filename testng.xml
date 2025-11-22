@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OrangeHRM Suite" verbose="1" parallel="false">
+
+    <test name="AddEmployee Tests">
+        <classes>
+            <class name="com.orangehrm.tests.AddEmployeeTest"/>
+        </classes>
+    </test>
+
+    <test name="PIM Basic Search">
+        <classes>
+            <class name="com.orangehrm.tests.PIM_SearchTests"/>
+        </classes>
+    </test>
+
+    <test name="PIM Advanced Search">
+        <classes>
+            <class name="com.orangehrm.tests.PIM_SearchAdvancedTests"/>
+        </classes>
+    </test>
+
+</suite>
