@@ -15,7 +15,7 @@ public class MyInfoPage {
 
     public MyInfoPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     private By myInfo = By.xpath("//span[text()='My Info']");
@@ -28,8 +28,7 @@ public class MyInfoPage {
     private By genderMaleRadio = By.xpath("//label[normalize-space()='Male']"); // male radio
     private By genderFemaleRadio = By.xpath("//label[normalize-space()='Female']"); // female radio
     private By dateOfBirthInput = By.xpath("(//input[@placeholder='yyyy-dd-mm'])[2]"); // DOB field
-    private By saveButton = By.xpath("(//button[@type='submit'][normalize-space()='Save'])[1]"); //
-
+    private By saveButton = By.xpath("(//button[@type='submit'][normalize-space()='Save'])[1]"); // save button
 
     public void openMyInfoPage() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(myInfo)).click();
@@ -102,4 +101,52 @@ public class MyInfoPage {
     public void clickSave() {
         wait.until(ExpectedConditions.elementToBeClickable(saveButton)).click();
     }
+
+// Methods For Assertion
+
+    public boolean isFirstNameUpdated(String firstname) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameInput)).getText();
+        return firstname.equals(firstname);
+    }
+    public boolean isLastNameUpdated(String lastname) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(lastNameInput)).getText();
+        return lastname.equals(lastname);
+    }
+    public boolean isNationalityUpdated(String nationality) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(nationalityDropdown)).getText();
+        return nationality.equals(nationality);
+    }
+    public boolean isMaritalStatusUpdated(String MaritalStatus) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(maritalStatusDropdown)).getText();
+        return MaritalStatus.equals(MaritalStatus);
+    }
+    public boolean isGenderUpdated(String expectedGender) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(genderFemaleRadio)).getAttribute("Female");
+        return expectedGender.equals(expectedGender);
+    }
+    public boolean isDateOfBirthUpdated(String expectedbod) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(dateOfBirthInput)).getAttribute("2000-08-02");
+        return expectedbod.equals(expectedbod);
+    }
 }
+//    public String getFirstName() {
+//        return wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameInput)).getText();
+//    }
+//    public String getLastName() {
+//        return wait.until(ExpectedConditions.visibilityOfElementLocated(lastNameInput)).getText();
+//    }
+//    public String getNationality() {
+//        return wait.until(ExpectedConditions.visibilityOfElementLocated(nationalityDropdown)).getText();
+//    }
+//    public String getMaritalStatus() {
+//        return wait.until(ExpectedConditions.visibilityOfElementLocated(maritalStatusDropdown)).getText();
+//    }
+//    public String getSelectedGender() {
+//        if (driver.findElement(genderMaleRadio).isSelected()) return "Male";
+//        if (driver.findElement(genderFemaleRadio).isSelected()) return "Female";
+//        return "";
+//    }
+//    public String getDateOfBirth() {
+//        return wait.until(ExpectedConditions.visibilityOfElementLocated(dateOfBirthInput)).getText();
+//    }
+   // public Collection<Object> getSuccessToast() {}

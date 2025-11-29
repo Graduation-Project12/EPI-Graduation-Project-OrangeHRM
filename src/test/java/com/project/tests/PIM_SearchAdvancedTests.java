@@ -23,7 +23,7 @@ public class PIM_SearchAdvancedTests extends BaseTest {
     // ================================
     @Test(priority = 1)
     public void TC_SearchByEmploymentStatus() {
-        loginPage.login("Admin", "admin123");
+        loginPage.loginDefaultUser();
         employeeListPage.openEmployeeList();
         employeeListPage.selectEmploymentStatus("Full-Time Contract");
         employeeListPage.clickSearch();

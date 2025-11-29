@@ -14,7 +14,7 @@ public class BaseTest {
 
     @BeforeClass
     public void setUp() {
-
+        String URL= "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         options.addArguments("--disable-notifications");
@@ -23,9 +23,14 @@ public class BaseTest {
         driver = new ChromeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.get(URL);
     }
+
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
 
     @AfterClass
     public void tearDown() {
