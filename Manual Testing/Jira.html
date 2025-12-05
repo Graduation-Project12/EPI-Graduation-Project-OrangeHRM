@@ -1,0 +1,2935 @@
+<html
+        xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>Jira</title>
+<style type="text/css">
+table {
+    mso-displayed-decimal-separator:"\.";
+    mso-displayed-thousand-separator:"\,";
+}
+body
+{
+    margin: 0px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color:black;
+}
+
+</style>
+<META HTTP-EQUIV="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8">
+<!-- JRA-7598 - ensure fields (e.g. description) occupy only one cell - even fields containing newlines. -->
+<!--
+Vertical align all cells to the top, in order to align all issue rows of issuetable to the top,
+since Excel does not use or save the css files it is hardcoded here.
+-->
+<style>
+@page
+{
+mso-page-orientation:landscape;
+margin:.25in .25in .5in .25in;
+mso-header-margin:.5in;
+mso-footer-margin:.25in;
+mso-footer-data:"&R&P of &N";
+mso-horizontal-page-align:center;
+mso-vertical-page-align:center;
+}
+
+td.issuekey,
+td.issuetype,
+td.status {
+    mso-style-parent: "";
+    mso-number-format: \@;
+    text-align: left;
+}
+br
+{
+    mso-data-placement:same-cell;
+}
+
+td
+{
+    vertical-align: top;
+}
+</style>
+
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook>
+<x:ExcelWorksheets>
+<x:ExcelWorksheet>
+<x:Name>general_report</x:Name>
+<x:WorksheetOptions>
+<x:Print>
+<x:ValidPrinterInfo/>
+</x:Print>
+</x:WorksheetOptions>
+</x:ExcelWorksheet>
+</x:ExcelWorksheets>
+</x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+<body>
+
+<table border="1">
+    <tr bgcolor="#205081" height="30">
+        <td colspan="51">
+            <img src="https://depi-final-project-r3-ast.atlassian.net/images/icon-jira-family-logo.png" width="57" height="30" border="0" alt="Jira">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="51">
+            <a href="https://depi-final-project-r3-ast.atlassian.net/issues/?jql=created+%3E%3D+-30d%0AAND+textfields+%7E+%22team+5%22%0AAND+assignee+IN+%28712020%3Ad79e3d4b-7892-41b2-9a38-55efbaed036f%2C+currentUser%28%29%2C+712020%3A9d03d410-629b-40c7-a69e-2470b220b0d2%29%0AORDER+BY+created+DESC">Jira</a>
+        </td>
+    </tr>
+    <tr>
+                <td colspan="51">
+            Displaying <strong>26</strong> issues at <strong>13/Nov/25 9:19 PM</strong>.
+        </td>
+    </tr>
+</table>
+
+
+
+
+                                        <table id="issuetable" class="aui " border="1" cellpadding="3" cellspacing="1" width="100%">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-statuscategorychangedate" data-id="statuscategorychangedate">
+                                                        Status Category Changed
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuetype" data-id="issuetype">
+                                                        Issue Type
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timespent" data-id="timespent">
+                                                        Time Spent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-project" data-id="project">
+                                                        Project
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-fixVersions" data-id="fixVersions">
+                                                        Fix versions
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimespent" data-id="aggregatetimespent">
+                                                        Σ Time Spent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-statusCategory" data-id="statusCategory">
+                                                        Status Category
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-parent" data-id="parent">
+                                                        Parent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolution" data-id="resolution">
+                                                        Resolution
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolutiondate" data-id="resolutiondate">
+                                                        Resolved
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-workratio" data-id="workratio">
+                                                        Work Ratio
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-watches" data-id="watches">
+                                                        Watchers
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-lastViewed" data-id="lastViewed">
+                                                        Last Viewed
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-thumbnail" data-id="thumbnail">
+                                                        Images
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-created" data-id="created">
+                                                        Created
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10020" data-id="customfield_10020">
+                                                        Sprint
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10021" data-id="customfield_10021">
+                                                        Flagged
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-priority" data-id="priority">
+                                                        Priority
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-labels" data-id="labels">
+                                                        Labels
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10016" data-id="customfield_10016">
+                                                        Story point estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10017" data-id="customfield_10017">
+                                                        Issue color
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10019" data-id="customfield_10019">
+                                                        Rank
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeestimate" data-id="timeestimate">
+                                                        Remaining Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeoriginalestimate" data-id="aggregatetimeoriginalestimate">
+                                                        Σ Original Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuelinks" data-id="issuelinks">
+                                                        Linked Issues
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-assignee" data-id="assignee">
+                                                        Assignee
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-updated" data-id="updated">
+                                                        Updated
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-status" data-id="status">
+                                                        Status
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                                                        Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeoriginalestimate" data-id="timeoriginalestimate">
+                                                        Original estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-description" data-id="description">
+                                                        Description
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10015" data-id="customfield_10015">
+                                                        Start date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-security" data-id="security">
+                                                        Security Level
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeestimate" data-id="aggregatetimeestimate">
+                                                        Σ Remaining Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                                                        Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-creator" data-id="creator">
+                                                        Creator
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-subtasks" data-id="subtasks">
+                                                        Sub-tasks
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10043" data-id="customfield_10043">
+                                                        Expected Results
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-reporter" data-id="reporter">
+                                                        Reporter
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10000" data-id="customfield_10000">
+                                                        Development
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10044" data-id="customfield_10044">
+                                                        Steps
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregateprogress" data-id="aggregateprogress">
+                                                        Σ Progress
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10001" data-id="customfield_10001">
+                                                        Team
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10045" data-id="customfield_10045">
+                                                        Acceptance Criteria
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10046" data-id="customfield_10046">
+                                                        Steps to Reproduce
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10047" data-id="customfield_10047">
+                                                        Expected Results
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10048" data-id="customfield_10048">
+                                                        Actual Results
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-environment" data-id="environment">
+                                                        Environment
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-duedate" data-id="duedate">
+                                                        Due date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-progress" data-id="progress">
+                                                        Progress
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-votes" data-id="votes">
+                                                        Votes
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow11055" rel="11055" data-issuekey="DEPI-290" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 5:59 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for DEPI-290" href="https://depi-final-project-r3-ast.atlassian.net/secure/attachment/10654/Screenshot+middle_name_no_validation1.png">
+            Screenshot middle_name_no_validation1.png
+        </a>
+    </td>
+                                            <td class="created"> 13/Nov/25 5:59 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002db:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-230                        </td>
+                                            <td class="assignee">            DEPI FINAL_PROJECT
+    </td>
+                                            <td class="updated"> 13/Nov/25 5:59 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-290" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-290">DEPI-290</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            The system allows saving the employee record even when the *Middle Name* field is left empty.<br/>
+The field is *not marked as optional* (no “Optional” label and no * symbol), which indicates that it should be validated like other required fields.<br/>
+However, no validation message is shown and saving is allowed.<br/>
+<br/>
+*Precondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+* “Add Employee” page is accessible<br/>
+<br/>
+*Priority:* {color:#ff991f}Medium{color}<br/>
+*Severity:* Major
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | system does not validate required Middle Name field.
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043"></td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046">      # Go to *PIM → Add Employee*.<br/>
+# Leave the *Middle Name* field empty.<br/>
+# Fill other required fields: First Name, Last Name, Employee ID.<br/>
+# Click *Save*.
+  </td>
+                                            <td class="customfield_10047">      System should display a validation error under the Middle Name field and prevent saving, since the field is not marked as optional.
+  </td>
+                                            <td class="customfield_10048">      System saves the employee record successfully without showing any validation error.<br/>
+
+  </td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11054" rel="11054" data-issuekey="DEPI-289" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 5:03 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 5:05 PM </td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for DEPI-289" href="https://depi-final-project-r3-ast.atlassian.net/secure/attachment/10647/empty_id_allowed1.png">
+            empty_id_allowed1.png
+        </a>
+    </td>
+                                            <td class="created"> 13/Nov/25 5:03 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002d3:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-231                        </td>
+                                            <td class="assignee">            DEPI FINAL_PROJECT
+    </td>
+                                            <td class="updated"> 13/Nov/25 5:07 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-289" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-289">DEPI-289</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            When the user deletes the auto-generated Employee ID, the system still allows saving the employee record instead of generating a new ID or showing a validation error.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+* “Add Employee” page is available<br/>
+<br/>
+*Priority:* {color:#ff5630}High{color}<br/>
+*Severity:* {color:#ff5630}Major{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | system allows saving employee with empty Employee ID.
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043"></td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046">      # Go to *PIM → Add Employee*.<br/>
+# Note that the Employee ID is auto-generated.<br/>
+# Delete the Employee ID manually (leave the field empty).<br/>
+# Fill the required fields (First Name, Last Name).<br/>
+# Click *Save*.
+  </td>
+                                            <td class="customfield_10047">      System should Show validation preventing saving the record without an Employee ID.
+  </td>
+                                            <td class="customfield_10048">      System allows saving the employee record even when the Employee ID field is empty.
+  </td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11053" rel="11053" data-issuekey="DEPI-288" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 4:48 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for DEPI-288" href="https://depi-final-project-r3-ast.atlassian.net/secure/attachment/10638/Screenshot+invalid_id_accepted1.png">
+            Screenshot invalid_id_accepted1.png
+        </a>
+    </td>
+                                            <td class="created"> 13/Nov/25 4:48 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002cv:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-270                        </td>
+                                            <td class="assignee">            DEPI FINAL_PROJECT
+    </td>
+                                            <td class="updated"> 13/Nov/25 4:48 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-288" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-288">DEPI-288</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            The Employee ID field accepts invalid characters such as “@@@@” and allows saving the record without validation.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+* “Add Employee” page is available<br/>
+<br/>
+*Priority:* High<br/>
+*Severity:* Major
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | system accepts invalid characters in the Employee ID field.
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043"></td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046">      # Go to *PIM → Add Employee*.<br/>
+# Delete the auto-generated Employee ID.<br/>
+# Enter invalid characters (e.g., {{@@@@}}).<br/>
+# Fill required fields (First Name, Last Name).<br/>
+# Click *Save*.
+  </td>
+                                            <td class="customfield_10047">      System should reject invalid Employee ID values and show a validation message.
+  </td>
+                                            <td class="customfield_10048">      System accepts the invalid Employee ID ({{@@@@}}) and allows saving the employee record.
+  </td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11052" rel="11052" data-issuekey="DEPI-287" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 4:28 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 4:30 PM </td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for DEPI-287" href="https://depi-final-project-r3-ast.atlassian.net/secure/attachment/10628/Screenshot+password_error_valid_password.png">
+            Screenshot password_error_valid_password.png
+        </a>
+    </td>
+                                            <td class="created"> 13/Nov/25 4:28 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002cn:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-273                        </td>
+                                            <td class="assignee">            DEPI FINAL_PROJECT
+    </td>
+                                            <td class="updated"> 13/Nov/25 4:28 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-287" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-287">DEPI-287</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            System displays an incorrect password validation error even when the password meets all security requirements.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+* “Create Login Details” enabled<br/>
+*Priority:* {color:#ff5630}High{color}<br/>
+*Severity:* {color:#ff5630}Major{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | system rejects valid complex password during employee creation.
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043"></td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046">      # Go to *PIM → Add Employee*.<br/>
+# Enable *Create Login Details*.<br/>
+# Enter Username: {{admin1}}.<br/>
+# Enter Password: {{Test@12345}}.<br/>
+# Enter Confirm Password: {{Test@12345}}.<br/>
+# Click *Save*.
+  </td>
+                                            <td class="customfield_10047">      System should accept the valid password and allow saving.
+  </td>
+                                            <td class="customfield_10048">      System displays an incorrect validation error:<br/>
+*“*{color:#ff5630}*Your password must contain minimum 1 lower-case letter*{color}*”*<br/>
+and prevents saving.
+  </td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11050" rel="11050" data-issuekey="DEPI-285" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 3:11 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 4:29 PM </td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for DEPI-285" href="https://depi-final-project-r3-ast.atlassian.net/secure/attachment/10629/Screenshot+duplicate_id_error_01.png">
+            Screenshot duplicate_id_error_01.png
+        </a>
+    </td>
+                                            <td class="created"> 13/Nov/25 3:11 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002c7:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-274                        </td>
+                                            <td class="assignee">            DEPI FINAL_PROJECT
+    </td>
+                                            <td class="updated"> 13/Nov/25 4:29 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-285" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-285">DEPI-285</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            When editing an existing employee profile, the system allows changing the Employee ID to a value that already exists in another employee record. This causes multiple employees to share the same ID, which breaks data integrity and affects search accuracy.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+# Stable internet connection<br/>
+# The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+# At least two employees already exist in the system<br/>
+<br/>
+<br/>
+*Priority:* {color:#ff5630}High{color}<br/>
+*Severity:* {color:#ff5630}Critical{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | system allows updating Employee ID to an already existing value.
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043"></td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044"></td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046">      # Navigate to *PIM → Employee List*.<br/>
+# Open any employee profile.<br/>
+# Click *Edit*.<br/>
+# Replace the current Employee ID with an ID already assigned to another employee.<br/>
+# Click *Save*.
+  </td>
+                                            <td class="customfield_10047">      System should block the update and display an error:<br/>
+*&quot;Employee Id already exists.&quot;*
+  </td>
+                                            <td class="customfield_10048">      System allows saving the duplicate Employee ID successfully, causing multiple employees to share the same ID.
+  </td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11049" rel="11049" data-issuekey="DEPI-284" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 12:34 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:46 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 12:34 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002bz:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 12:34 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-284" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-284">DEPI-284</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the user can remove an existing employee from the system using the delete icon in the Employee List.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify user can delete an existing employee successfully.
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      Employee record should be removed successfully and should *not appear* in search results after deletion.
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to *PIM → Employee List*.<br/>
+# Search for the employee you want to delete using any method (Name / ID / Job Title / etc.).<br/>
+# From the search results, click the *Delete (trash bin) icon* beside the employee record.<br/>
+# Confirm the deletion in the confirmation dialog.<br/>
+# Perform the search again for the same employee.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11048" rel="11048" data-issuekey="DEPI-283" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 12:27 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:47 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 12:27 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002br:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 12:47 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-283" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-283">DEPI-283</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure deleted employee does not appear in Employee List<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify deleted employee no longer visible
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      employee record not found.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      Search for deleted employee name.<br/>
+
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11047" rel="11047" data-issuekey="DEPI-282" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 12:13 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:47 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 12:13 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002bj:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 12:13 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-282" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-282">DEPI-282</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure user can edit existing employee information<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify editing employee details
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      Employee details updated successfully.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      * Open employee profile.<br/>
+* Edit First Name, Last Name, etc..<br/>
+* Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11046" rel="11046" data-issuekey="DEPI-281" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 12:06 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:48 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 12:06 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002bb:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 12:06 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-281" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-281">DEPI-281</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure employees can be found using their ID<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify search by Employee ID
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      Employee record displayed.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      * Enter employee ID in search box “employee ID”.<br/>
+* Click Search.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11045" rel="11045" data-issuekey="DEPI-280" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 11:48 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:48 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 11:48 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002b3:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 11:48 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-280" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-280">DEPI-280</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure employees can be found by name in Employee List.<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify search by employee name
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      Employee record displayed.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      * Enter name in search box “*Employee Name”*.<br/>
+* Click Search.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11044" rel="11044" data-issuekey="DEPI-279" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 11:41 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 11:48 AM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 11:41 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002av:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 11:41 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-279" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-279">DEPI-279</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the system successfully uploads allowed image formats and displays them correctly in the profile picture section.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify system accepts valid image file formats in profile picture upload
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      System should accept valid {{.jpg}}, {{.png}}, {{.gif}} images up to *1MB* and display them correctly as profile pictures (200px × 200px recommended).<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      h3. *Steps:*<br/>
+<br/>
+# Navigate to *PIM → Add Employee*.<br/>
+# Click on the profile picture upload icon (“+”).<br/>
+# Upload each of the valid file formats one by one:<br/>
+#* {{.jpg}} file (≤ 1MB, recommended: 200px × 200px)<br/>
+#* {{.png}} file (≤ 1MB, recommended: 200px × 200px)<br/>
+#* {{.gif}} file (≤ 1MB, recommended: 200px × 200px)<br/>
+# Check that each uploaded file appears correctly as the profile picture.<br/>
+# Fill in the required employee fields.<br/>
+# Click *Save*.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11043" rel="11043" data-issuekey="DEPI-278" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 11:36 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:48 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 11:36 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i002an:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 11:36 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-278" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-278">DEPI-278</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the system restricts profile picture uploads to supported image formats only and does not allow uploading unsupported file types.<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify system rejects invalid image file formats in profile picture upload
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      System rejects invalid file formats correctly and prevents uploading.
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to *PIM → Add Employee*.<br/>
+# Click on the profile picture upload icon.<br/>
+# Attempt to upload files and verify behavior for each case:
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11007" rel="11007" data-issuekey="DEPI-274" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 1:32 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 3:13 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 1:32 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0029r:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4,                                                DEPI-285                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 3:11 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-274" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-274">DEPI-274</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the system validates Employee ID uniqueness not only when adding a new employee but also when editing an existing record.<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#ff5630}Failed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify system prevents editing Employee ID to a duplicate existing value
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      System should display an error message such as “{color:#ff5630}Employee Id already exists{color}” and prevent saving when the entered ID is duplicate.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to *PIM → Employee List.*<br/>
+# Open an existing employee record for editing.<br/>
+# In the *Employee ID* field, replace the current ID with a value that already exists (e.g., 0391).<br/>
+# Click *Save.*<br/>
+# Search for the duplicate Employee ID in the Employee List.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11006" rel="11006" data-issuekey="DEPI-273" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 12:55 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 3:39 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 13/Nov/25 12:55 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0029j:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4,                                                DEPI-287                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 4:28 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-273" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-273">DEPI-273</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the password field validation correctly verifies password strength and allows saving when all requirements are met.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#ff5630}Failed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify password field validation allows saving when password meets all security requirements
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      The error message “{color:#ff5630}Your password must contain minimum 1 lower-case letter{color}” should disappear when a valid password is entered, and the system should allow saving successfully.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to PIM → Add Employee.<br/>
+# Enable the *Create Login Details* option.<br/>
+# Enter valid values in Username and Password fields.<br/>
+#* Username: {{admin1}}<br/>
+#* Password: Complex password including uppercase, lowercase, numbers, and symbols (e.g., {{Test@12345}}).<br/>
+# Re-enter the same password in *Confirm Password*.<br/>
+# Click *Save*.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow11003" rel="11003" data-issuekey="DEPI-270" class="issuerow">
+                                            <td class="statuscategorychangedate"> 12/Nov/25 11:59 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 4:31 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 12/Nov/25 11:59 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0028v:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4,                                                DEPI-288                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 4:48 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-270" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-270">DEPI-270</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the Employee ID field accepts only alphanumeric characters and does not allow special characters such as “@” or “#”.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#ff5630}Failed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify system does not accept invalid characters in Employee ID field
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      System should display a validation message and prevent saving when invalid characters are entered in Employee ID.
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to PIM → Add Employee.<br/>
+# Delete the auto-generated Employee ID.<br/>
+# Enter invalid characters (e.g., “@@@@”).<br/>
+# Fill required fields.<br/>
+# Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10996" rel="10996" data-issuekey="DEPI-263" class="issuerow">
+                                            <td class="statuscategorychangedate"> 12/Nov/25 9:12 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:50 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 12/Nov/25 9:12 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0027b:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 12/Nov/25 9:12 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-263" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-263">DEPI-263</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the system prevents saving an employee record when the entered Employee ID already exists and displays the correct validation message.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify system displays error when Employee ID is duplicated
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      System should display a validation message “Employee Id already exists” and prevent saving.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      * Navigate to PIM → Add Employee.<br/>
+* Enter an Employee ID that already exists in the system.<br/>
+* Fill all required fields (First Name, Last Name).<br/>
+* Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10995" rel="10995" data-issuekey="DEPI-262" class="issuerow">
+                                            <td class="statuscategorychangedate"> 12/Nov/25 8:55 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:50 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 12/Nov/25 8:55 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i00273:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 12/Nov/25 8:55 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-262" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-262">DEPI-262</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the user can change the auto-generated Employee ID manually, provided the new ID does not already exist in the system.<br/>
+<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify user can manually edit Employee ID with a unique value
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      The system should accept the manually entered unique Employee ID and create the employee successfully.
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to PIM → Add Employee.<br/>
+# Delete the auto-generated Employee ID.<br/>
+# Enter a new unique ID number.<br/>
+# Fill all required fields (First Name, Last Name).<br/>
+# Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10994" rel="10994" data-issuekey="DEPI-261" class="issuerow">
+                                            <td class="statuscategorychangedate"> 12/Nov/25 8:40 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:50 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 12/Nov/25 8:40 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i0026v:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 12/Nov/25 8:40 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-261" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-261">DEPI-261</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the Employee ID field is automatically filled with a unique ID when the Add Employee form is opened.<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}<br/>
+
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify Employee ID auto-generates 
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      Employee ID field should be automatically filled with a unique number when the form is opened.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to PIM → Add Employee.<br/>
+# Check the Employee ID field value.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10991" rel="10991" data-issuekey="DEPI-258" class="issuerow">
+                                            <td class="statuscategorychangedate"> 12/Nov/25 8:03 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:51 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 12/Nov/25 8:03 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i00267:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 12/Nov/25 8:03 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-258" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-258">DEPI-258</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure the newly created employee appears in the Employee List.<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify new employee appears in Employee List after creation
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      The new employee record appears in the list.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to Employee List.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10954" rel="10954" data-issuekey="DEPI-253" class="issuerow">
+                                            <td class="statuscategorychangedate"> 12/Nov/25 1:36 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:50 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 12/Nov/25 1:36 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i00253:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 12/Nov/25 8:38 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-253" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-253">DEPI-253</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure a new employee can be created with valid data.<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify successful creation of new employee
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      “Successfully Saved” message is displayed, and the record is created.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      * Navigate to PIM → Add Employee.<br/>
+* Fill in all valid data.<br/>
+* Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10879" rel="10879" data-issuekey="DEPI-232" class="issuerow">
+                                            <td class="statuscategorychangedate"> 11/Nov/25 2:07 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 6:00 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 11/Nov/25 2:07 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i001vr:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 6:01 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-232" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-232">DEPI-232</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure the system does NOT prevent creating multiple employee records that have the same “First Name, Middle Name, and Last Name” but different Employee IDs.<br/>
+*Precondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify that the system allows duplicate employees with the same full name but different IDs 
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      The system shouldn’t show a warning or validation message preventing duplicate employee creation.<br/>
+
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to PIM → Add Employee.<br/>
+# Add an employee with the same first, middle, and last name as an existing one.<br/>
+# Change only “Employee ID.”<br/>
+# Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10846" rel="10846" data-issuekey="DEPI-231" class="issuerow">
+                                            <td class="statuscategorychangedate"> 11/Nov/25 11:05 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 4:49 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 11/Nov/25 11:05 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i001vj:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4,                                                DEPI-289                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 5:03 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-231" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-231">DEPI-231</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure the Employee ID field is either mandatory or auto-generated when the user deletes it manually before saving.<br/>
+<br/>
+*Precondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#ff5630}Failed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify validation behavior when Employee ID is deleted manually.
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      The system should either auto-generate a new “Employee ID” or show a validation message preventing save.
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to PIM → Add Employee.<br/>
+# Manually delete the “Employee ID”.<br/>
+# Fill other fields.<br/>
+# Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10845" rel="10845" data-issuekey="DEPI-230" class="issuerow">
+                                            <td class="statuscategorychangedate"> 11/Nov/25 10:35 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:52 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 11/Nov/25 10:35 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i001vb:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4,                                                DEPI-290                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 5:59 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-230" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-230">DEPI-230</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure the validation message appears when the middle name is left blank.<br/>
+<br/>
+*Precondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link] *username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#ff5630}Failed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify validation message when Middle Name is empty
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      The validation message should appear under Middle Name.
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to Add Employee.<br/>
+# Leave Middle Name empty.<br/>
+# Fill other fields.<br/>
+# Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10844" rel="10844" data-issuekey="DEPI-229" class="issuerow">
+                                            <td class="statuscategorychangedate"> 11/Nov/25 10:27 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:52 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 11/Nov/25 10:27 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i001v3:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 11/Nov/25 10:27 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-229" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-229">DEPI-229</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure the validation message appears when the Last Name field is left blank<br/>
+<br/>
+*Precondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify validation message when Last Name is empty
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      A validation message appears under the Last Name field
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to Add Employee.<br/>
+# Leave Last Name empty.<br/>
+# Fill other fields.<br/>
+# Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10843" rel="10843" data-issuekey="DEPI-228" class="issuerow">
+                                            <td class="statuscategorychangedate"> 11/Nov/25 10:20 AM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:53 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 11/Nov/25 10:20 AM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i001uv:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 11/Nov/25 10:20 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-228" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-228">DEPI-228</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure the validation message appears when the First Name field is left blank<br/>
+<br/>
+*Precondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM | Verify validation message when First Name is empty
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      A validation message appears under the First Name field
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # Navigate to PIM → Add Employee.<br/>
+# Leave First Name empty.<br/>
+# Fill other fields.<br/>
+# Click Save.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+
+
+                <tr id="issuerow10636" rel="10636" data-issuekey="DEPI-151" class="issuerow">
+                                            <td class="statuscategorychangedate"> 13/Nov/25 6:05 PM </td>
+                                            <td class="issuetype">    Test case
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="project">    DEPI_R3_OrangeHRM1
+</td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="watches">1</td>
+                                            <td class="lastViewed"> 13/Nov/25 12:45 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="created"> 06/Nov/25 2:39 PM </td>
+                                            <td class="customfield_10020">DEPI Sprint 1</td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels">    Team5</td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="customfield_10019">      0|i001dr:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="issuelinks">                                        DEPI-4                        </td>
+                                            <td class="assignee">            Kerollos Samuel
+    </td>
+                                            <td class="updated"> 13/Nov/25 6:05 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="DEPI-151" href="https://depi-final-project-r3-ast.atlassian.net/browse/DEPI-151">DEPI-151</a>
+</td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="description">            Ensure that the “Add Employee” button is visible and clickable for the admin user on the Employee List page.<br/>
+P*recondition:*<br/>
+<br/>
+* Stable internet connection<br/>
+* The user logged in as admin with the [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|https://opensource-demo.orangehrmlive.com/web/index.php/auth/login|smart-link]*username* &quot;*Admin*&quot; and the *password* &quot;*admin123*.&quot;<br/>
+<br/>
+*Status:* {color:#36b37e}Passed{color}
+    </td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="summary"><p>
+                Team 5 | PIM| Verify Add Employee button visibility on Employee List page
+    </p>
+</td>
+                                            <td class="creator">            Kerollos Samuel
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="customfield_10043">      The *Add Employee* button is visible and accessible to the admin.
+  </td>
+                                            <td class="reporter">            Kerollos Samuel
+    </td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="customfield_10044">      # navigate to the *PIM* module.<br/>
+# Verify that the &#39;*Add Employee&#39;* button is visible on the Employee List page.
+  </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10001">            <span class="tinylink">
+            <span class="team-hover"
+               rel="d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               href="https://depi-final-project-r3-ast.atlassian.net/jira/people/team/d03fe5b2-c7cf-4c10-94d9-73a4e1853448"
+               data-team="{&quot;teamId&quot;: &quot;d03fe5b2-c7cf-4c10-94d9-73a4e1853448&quot;}"
+               data-subjectid="column"
+            >
+                Team 5 Orange
+            </span>
+        </span>
+    </td>
+                                            <td class="customfield_10045"></td>
+                                            <td class="customfield_10046"></td>
+                                            <td class="customfield_10047"></td>
+                                            <td class="customfield_10048"></td>
+                                            <td class="environment"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                    </tr>
+        </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            <table border="1" >
+<tr>
+    <td bgcolor="#dddddd" colspan="51"><font size="1">
+        Generated at Thu Nov 13 19:19:41 UTC 2025 by Kerollos Samuel using Jira 1001.0.0-SNAPSHOT#100290-rev:4581997041a43b0f931b96863a4c0232d7075fd9.
+    </font></td>
+</tr>
+</table>
+
+</body>
+</html>
